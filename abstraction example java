@@ -1,0 +1,61 @@
+package com.abstraction;
+
+/**
+ * @author msfata ProgrammingHelp
+ *
+ */
+public abstract class Human {
+	abstract void setName(String name);
+
+	abstract void setAge(int age);
+	
+	abstract String getName();
+	abstract int getAge();
+}
+
+package com.abstraction;
+
+/**
+ * @author msfata ProgrammingHelp
+ *
+ */
+class HumanFactory extends Human {
+	private String name;
+	private int age;
+
+	@Override
+	void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	String getName() {
+		return this.name;
+	}
+
+	@Override
+	int getAge() {
+		return this.age;
+	}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		/*
+		 * new Human created
+		 */
+		HumanFactory hf = new HumanFactory();
+		hf.setName("Mohammed");
+		hf.setAge(33);
+		/*
+		 * results
+		 */
+		System.out.println("Name : " + hf.getName());
+		System.out.println("Age  : " + hf.getAge());
+	}
+}
